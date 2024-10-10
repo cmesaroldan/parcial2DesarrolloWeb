@@ -1,29 +1,37 @@
-// Espera a que el DOM esté completamente cargado
-document.addEventListener("DOMContentLoaded", () => {
-    const baseURL = 'https://bbd7-2800-e2-2780-2479-2417-fe6c-d24e-ecb3.ngrok-free.app/foods'; // URL de la API
+import { FoodAPI } from './api.js';
+import { DOMManager } from './dom.js';
 
-    // Función para obtener datos de la API
-    async function fetchFoodData() {
-        try {
-            console.log('Realizando petición a la API...');
+const api = new FoodAPI('http://ec2-3-138-183-128.us-east-2.compute.amazonaws.com:4010/foods');
+const domManager = new DOMManager();
 
-            // Realizar la solicitud a la API
-            const response = await fetch(baseURL);
-            console.log('Respuesta de la API:', response);
-
-            // Verificar que la respuesta sea correcta
-            if (!response.ok) {
-                throw new Error(`Error en la petición: ${response.status} - ${response.statusText}`);
-            }
-
-            // Obtener los datos en formato JSON
-            const data = await response.json();
-            console.log('Datos recibidos de la API:', data);
-        } catch (error) {
-            console.error('Error al obtener los datos de la API:', error);
+document.getElementById('fetch-food').addEventListener('click', async () => {
+    try {
+        const foods = await api.fetchFoods();
+        if (foods && foods.length > 0) {
+            domManager.displayFoods(foods);
+        } else {
+            throw new Error('No se recibieron datos de la API.');
         }
+    } catch (error) {
+        console.warn(error.message);
+        domManager.showMessage('Error al obtener datos de la API.', false);
     }
+});
 
-    // Llamar a la función para obtener los datos
-    fetchFoodData();
+domManager.formElement.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const newFood = {
+        name: domManager.nameInput.value,
+        description: domManager.descriptionInput.value,
+        ingredients: domManager.ingredientsInput.value.split(',').map(item => item.trim()),
+        image: domManager.imageInput.value,
+    };
+
+    try {
+        await api.createFood(newFood);
+        domManager.showMessage('Alimento creado exitosamente.', true);
+        domManager.clearForm();
+    } catch (error) {
+        domManager.showMessage('Error al crear el alimento.', false);
+    }
 });

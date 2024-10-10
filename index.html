@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Client</title>
+    <title>API Food App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Consulta de Alimentos desde la API</h1>
-    <script src="app.js"></script> 
+    <header>
+        <h1>API Food App</h1>
+        <button id="fetch-food">Cargar Alimentos</button>
+    </header>
+    <main>
+        <section id="food-list"></section>
+        <form id="food-form">
+            <h2>Agregar Nuevo Alimento</h2>
+            <input type="text" id="name" placeholder="Nombre" required>
+            <input type="text" id="description" placeholder="Descripción" required>
+            <input type="text" id="ingredients" placeholder="Ingredientes (separados por coma)" required>
+            <input type="url" id="image" placeholder="URL de la imagen" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <div id="message"></div>
+    </main>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
