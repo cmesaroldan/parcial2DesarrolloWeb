@@ -2,6 +2,7 @@
 
 const API_URL = 'http://ec2-3-138-183-128.us-east-2.compute.amazonaws.com:4010/foods';
 
+//Nota, la peticion GET se da de manera implicita, no es necesario especificarlo
 export async function fetchFoods() {
     try {
         const response = await fetch(API_URL);
