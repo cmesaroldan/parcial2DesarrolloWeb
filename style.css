@@ -83,3 +83,32 @@ input[type="text"], input[type="url"] {
     color: red;
     font-family: 'Poppins', sans-serif; /* Fuente Poppins en los mensajes */
 }
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer p span {
+    font-weight: 600; /* Destaca el nombre del estudiante */
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

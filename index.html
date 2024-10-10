@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Food App</title>
+    <title>Gestión de Alimentos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>API Food App</h1>
-        <button id="fetch-food">Cargar Alimentos</button>
+        <h1>Gestión de Alimentos</h1>
     </header>
     <main>
         <section id="food-list"></section>
         <form id="food-form">
-            <h2>Agregar Nuevo Alimento</h2>
-            <input type="text" id="name" placeholder="Nombre" required>
-            <input type="text" id="description" placeholder="Descripción" required>
-            <input type="text" id="ingredients" placeholder="Ingredientes (separados por coma)" required>
-            <input type="url" id="image" placeholder="URL de la imagen" required>
-            <button type="submit">Agregar</button>
+            <h2 id="form-title">Agregar/Editar Alimento</h2>
+            <input type="text" id="food-name" placeholder="Nombre del alimento" required>
+            <input type="text" id="food-description" placeholder="Descripción del alimento" required>
+            <input type="url" id="food-image" placeholder="URL de la imagen" required>
+            <button type="button" id="add-food">Agregar Alimento</button>
+            <p id="feedback"></p>
         </form>
-        <div id="message"></div>
     </main>
+    <footer>
+        <p>Estudiante: <span>Carlos Andrés Mesa Roldan</span></p>
+        <p>Universidad de Antioquia</p>
+        <p>Consulta más en: <a href="https://www.udea.edu.co" target="_blank">www.udea.edu.co</a></p>
+    </footer>
     <script type="module" src="app.js"></script>
 </body>
 </html>
