@@ -1,3 +1,5 @@
+//Con el objetivo de relacionar variables de mi JS con mi html
+
 export class DOMManager {
     constructor() {
         this.foodList = document.getElementById('food-list');

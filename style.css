@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -14,6 +16,7 @@ header {
 
 h1 {
     margin: 0;
+    font-weight: 600; /* Encabezado con peso mayor */
 }
 
 button {
@@ -23,6 +26,7 @@ button {
     border: none;
     cursor: pointer;
     transition: background 0.3s;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins aplicada */
 }
 
 button:hover {
@@ -45,7 +49,7 @@ main {
     margin: 10px;
     padding: 15px;
     width: 200px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(231, 68, 68, 0.1);
 }
 
 .food-item img {
@@ -67,12 +71,15 @@ input[type="text"], input[type="url"] {
     margin: 5px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins en los inputs */
 }
 
 .success {
     color: green;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins en los mensajes */
 }
 
 .error {
     color: red;
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins en los mensajes */
 }
